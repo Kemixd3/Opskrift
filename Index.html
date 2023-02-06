@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Recipe Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1 id="h1s">Recipe Book</h1>
+      <nav id="selecter" style="text-align: center; justify-content: center;">
+        <select style="text-align: center;" id="recipe-select">
+            <option value="Home">Home</option>
+            <option value="chocolate-cake">Chocolate Cake</option>
+            
+          <option value="lasagna">Lasagna</option>
+          <option value="pizza">Pizza</option>
+          
+        </select>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2 id="title"></h2>
+        <ul id="ingredients"></ul>
+        <ul id="instructions"></ul>
+        <img src="" alt="">
+      <aside>
+        <h1 >Hey and welcome to my book of recipes</h1> 
+        <img src="food.jpg" alt="food">
+      </aside>
+    </main>
+    
+</section>
+    <footer>
+      &copy; Recipe Book 2023 - Opgave
+    </footer>
+    <script src="script.js"></script>
+  </body>
+  
+  
+</html>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  flex-direction: column;
+  align-items: center;
+  background-color: royalblue;
+}
+
+header {
+  background-color: royalblue;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: royalblue;
+}
+
+
+aside {
+    margin-top: 200px;
+  width: 20%;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+article {
+  width: 100%;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-color: grey;
+}
+
+footer {
+    box-shadow: 5px 10px 20px 10px rgba(0,0,0,0.3);
+  
+  color: white;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  margin-top: 450px;
+}
+
+select {
+    padding: 16px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid #333;
+  background-color: royalblue;
+  box-shadow: 0px 0px 10px #999;
+    
+}
+#h1s {
+    text-shadow: 0px 0px 20px #fff, 0px 0px 10px royalblue, 0px 0px 5px #fff;
+    font-size: 40px;
+    
+}
+
+
+
+</style>
