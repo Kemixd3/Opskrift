@@ -2,6 +2,10 @@ const recipeDropdown = document.querySelector('#recipe-dropdown');
 const recipeDetails = document.querySelector('#recipe-details');
 const foodImage = document.querySelector('img');
 const aside = document.querySelector('aside');
+const link = document.querySelector('#recipe-link');
+
+const buttonLasagna = document.querySelector('#recipe-button-lasagna');
+const buttonPizza = document.querySelector('#recipe-button-pizza');
 const recipes = {
     'Home': {
         title: 'Hey and welcome to my book of recipes',
@@ -13,7 +17,8 @@ const recipes = {
          
         
         ],
-        image: 'food.jpg'
+        image: 'food.jpg',
+        link: 'https://www.google.com/'
       },
 
 
@@ -119,7 +124,60 @@ const recipes = {
           'Bake for 10-15 minutes, or until the crust is golden brown and the cheese is melted and bubbly.'
         ],
         image: 'pizza.jpg'
-      }
+      },
+
+        'boller': {
+    title: 'Boller Recipe 60+ MIN',
+    ingredients: [
+      'Smør: 150 g',
+      'Mælk: 3 dl',
+      'Gær: 25 g',
+      'Sukker: 3 spsk',
+      'Groft salt: 1 tsk',
+      'Stødt kardemomme: 1 tsk',
+      'Hvedemel: 500 g',
+      'Æg - til pensling',
+      'Konditorcreme:',
+      'Mælk: 4 dl',
+      'Æggeblommer: 4',
+      'Maizena: 3 spsk',
+      'Sukker: 2 spsk',
+      'Vaniljestang (kornene heraf) eller vaniljepasta i tilsvarende mængde: 1',
+      'Appelsinfyld og glasur:',
+      'Appelsiner (usprøjtede): 6',
+      'Sukker: 1 spsk',
+      'Flormelis: 100 g',
+      'Friskpresset appelsinsaft: 1½ spsk',
+      'Karolines Køkken® Piskefløde 38%: 3 dl'
+    ],
+  instructions: [
+'Melt the butter in a saucepan and pour it into a large bowl.',
+'Add the milk and dissolve the yeast in it.',
+'Add sugar, salt, and cardamom.',
+'Add the flour (leave about 1/2 cup of flour), and stir the dough until it is smooth and releases the bowl.',
+'Cover the bowl and let the dough rise in a warm place for about 45 minutes.',
+'Take the dough out on a floured surface and form it into 12 buns.',
+'Let the dough rise again, covered, for about 1 hour.',
+'Brush with egg and bake the buns in the middle of the oven until they are golden.',
+'Let the buns cool completely.',
+'For the custard filling, beat the milk and egg yolks together in a saucepan.',
+'Beat the cornstarch, sugar, and vanilla seeds and pod in the saucepan.',
+'Bring the mixture to a boil while whisking and cook the cream over low heat, still stirring, for about 3 minutes or until the taste of cornstarch is gone.',
+'Pour the cream into a bowl and cover it with plastic wrap, making sure it doesnt form a skin. Let the cream cool and remove the vanilla pod afterwards.',
+'For the orange filling and glaze, thinly slice the peel from 1 orange and set aside for garnish.',
+'Finely grate the peel of 2 of the oranges.',
+'Peel all the oranges and cut orange slices. Put them in a bowl and toss with orange peel and sugar.',
+'Stir the powdered sugar and orange juice together to form a thick glaze.',
+'Fastelavnsbuns with custard and orange: Whip the cream into a relatively firm foam, but stop in time so the cream does not become over whipped. Then whip the vanilla cream gently and combine with the cream. Put the custard filling in a pastry bag with a round tip.',
+'Cut the tops of all the buns and take a bit of the crumb out to make room for the filling.',
+'Put a small spoonful of orange filling into each bun and then pipe dabs of custard filling on top.',
+'Put the tops back on the filled buns.',
+'Spread the glaze on top of the Fastelavnsbuns and decorate with strips of orange peel.',
+'Bake for 15-20 minutes at 180°F (hot air).'
+],
+
+ image: 'pizza.jpg'
+  },
     };
     
     const select = document.querySelector('select');
@@ -149,6 +207,26 @@ const recipes = {
         ingredients.appendChild(li);
       
       });
+
+
+      
+
+      select.addEventListener('change', function() {
+        const selectedOption = this.value;
+        if (selectedOption === 'lasagna') {
+          buttonLasagna.style.display = 'block';
+          buttonPizza.style.display = 'none';
+        } else if (selectedOption === 'pizza') {
+          buttonLasagna.style.display = 'none';
+          buttonPizza.style.display = 'block';
+        }else if (selectedOption === 'boller') {
+          buttonLasagna.style.display = 'none';
+          buttonPizza.style.display = 'block';
+        }
+      });
+
+
+
       instructions.innerHTML = '';
       recipe.instructions.forEach(function(instruction) {
         const p = document.createElement('p');
